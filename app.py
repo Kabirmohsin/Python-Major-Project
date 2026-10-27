@@ -204,6 +204,7 @@ def login():
 @login_required
 def logout():
     logout_user()
+    session.pop("cart", None)
     flash("Logged out successfully.", "info")
     return redirect(url_for("index"))
 

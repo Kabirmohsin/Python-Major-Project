@@ -1,10 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Checkout - GymDesk{% endblock %}
+{% block content %}
 
 <h3 class="fw-bold mb-4 text-white"><i class="bi bi-truck"></i> Checkout</h3>
 <div class="row g-4">
   <div class="col-md-7">
     <div class="p-4 rounded-4 shadow-sm form-card">
       <h5 class="mb-3">Delivery Details</h5>
-      <form method="post">
+      <form method="post" action="{{ url_for('checkout') }}">
         <div class="mb-3">
           <label class="form-label">Full Address</label>
           <textarea name="address" class="form-control" rows="3" required placeholder="House no, street, city, pincode"></textarea>
@@ -24,15 +27,17 @@
   <div class="col-md-5">
     <div class="p-4 rounded-4 shadow-sm cart-summary">
       <h5 class="mb-3">Order Summary</h5>
- 
+
+      {% for entry in items %}
       <div class="d-flex justify-content-between align-items-center small mb-2">
         <span class="d-flex align-items-center gap-2">
           <img src="{{ entry.product.image|img_url }}" class="cart-thumb rounded" style="width:38px;height:38px;" alt="{{ entry.product.name }}">
-         
+          <span>{{ entry.product.name }} × {{ entry.qty }}</span>
         </span>
         <span>₹{{ "%.2f"|format(entry.subtotal) }}</span>
       </div>
-   
+      {% endfor %}
+
       <hr>
       <div class="d-flex justify-content-between fw-bold">
         <span>Total</span><span>₹{{ "%.2f"|format(total) }}</span>
@@ -40,3 +45,5 @@
     </div>
   </div>
 </div>
+
+{% endblock %}
