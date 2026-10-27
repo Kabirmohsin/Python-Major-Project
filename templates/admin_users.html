@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{ role|capitalize }}s - GymDesk Admin{% endblock %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-4 mb-3">
+  <h2 class="fw-bold text-white mb-0">
+    <i class="bi bi-{{ 'shop' if role == 'seller' else 'people-fill' }}"></i>
+    All {{ role|capitalize }}s ({{ users|length }})
+  </h2>
+  <a href="{{ url_for('admin_dashboard') }}" class="btn btn-cart">
+    <i class="bi bi-arrow-left"></i> Back to Dashboard
+  </a>
+</div>
+
+<div class="table-responsive form-card rounded-3 shadow-sm mb-5">
+  <table class="table align-middle mb-0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>Email</th>
+        {% if role == 'seller' %}
+        <th>Shop Name</th>
+        <th>Products</th>
+        {% else %}
+        <th>Orders</th>
+        {% endif %}
+        <th>Joined</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for u in users %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td class="fw-semibold">{{ u.username }}</td>
+        <td>{{ u.email }}</td>
+        {% if role == 'seller' %}
+        <td>{{ u.shop_name or '-' }}</td>
+        <td>{{ u.products|length }}</td>
+        {% else %}
+        <td>{{ u.orders|length }}</td>
+        {% endif %}
+        <td>{{ u.created_at.strftime('%d %b %Y') if u.created_at else '-' }}</td>
+        <td>
+          <form method="post" action="{{ url_for('admin_user_delete', user_id=u.id) }}"
+                data-msg="Are you sure you want to delete this {{ role }}? {{ 'All their products will also be deleted.' if role == 'seller' else 'All their orders will also be deleted.' }}"
+                onsubmit="return confirm(this.dataset.msg)">
+            <button type="submit" class="btn btn-sm btn-outline-danger">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </form>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="7" class="text-center text-muted py-4">No {{ role }}s found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

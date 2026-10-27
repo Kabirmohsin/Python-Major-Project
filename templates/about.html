@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% block title %}About Us - GymDesk{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<section class="about-hero text-center">
+  <span class="about-tag"><i class="bi bi-lightning-charge-fill"></i> About GymDesk</span>
+  <h1 class="fw-bold display-5 text-white mt-3">Built for those who <span class="text-orange">never skip</span> a session</h1>
+  <p class="lead about-muted mx-auto mt-3" style="max-width: 680px;">
+    GymDesk is your one-stop store for gym essentials. From supplements to bags, shakers and vests, we bring everything a serious lifter needs to one simple, trusted place.
+  </p>
+</section>
+
+<!-- Stats -->
+<section class="row g-3 my-4 text-center">
+  <div class="col-6 col-md-3">
+    <div class="about-card p-4 h-100">
+      <div class="about-num">4</div>
+      <div class="about-label">Categories</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="about-card p-4 h-100">
+      <div class="about-num">40+</div>
+      <div class="about-label">Products</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="about-card p-4 h-100">
+      <div class="about-num">COD</div>
+      <div class="about-label">Pay on Delivery</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="about-card p-4 h-100">
+      <div class="about-num">24/7</div>
+      <div class="about-label">Online Store</div>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="about-card p-4 p-md-5 my-4">
+  <div class="row align-items-center g-4">
+    <div class="col-md-6">
+      <h3 class="fw-bold text-white mb-3">Our Story</h3>
+      <p class="about-muted">
+        GymDesk started with a simple idea: buying gym gear should be easy, honest and affordable. We noticed that fitness lovers waste time hunting for genuine products across many places, so we built one store that has it all.
+      </p>
+      <p class="about-muted mb-0">
+        Every product on GymDesk is listed by a verified seller and approved by our team before it reaches you. That way, you shop with confidence and train with the best.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-3">
+        <div class="col-6">
+          <div class="about-mini p-3 h-100">
+            <i class="bi bi-patch-check-fill"></i>
+            <h6 class="text-white mt-2 mb-1">Verified Products</h6>
+            <small class="about-muted">Admin-approved listings only.</small>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="about-mini p-3 h-100">
+            <i class="bi bi-cash-coin"></i>
+            <h6 class="text-white mt-2 mb-1">Cash on Delivery</h6>
+            <small class="about-muted">Pay when your order arrives.</small>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="about-mini p-3 h-100">
+            <i class="bi bi-shop"></i>
+            <h6 class="text-white mt-2 mb-1">Trusted Sellers</h6>
+            <small class="about-muted">Real shops, real people.</small>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="about-mini p-3 h-100">
+            <i class="bi bi-truck"></i>
+            <h6 class="text-white mt-2 mb-1">Order Tracking</h6>
+            <small class="about-muted">Follow every status update.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission -->
+<section class="text-center my-5">
+  <h3 class="fw-bold text-white">Our Mission</h3>
+  <p class="about-muted mx-auto" style="max-width: 640px;">
+    To fuel every fitness journey with quality gear, fair prices and a smooth shopping experience.
+  </p>
+</section>
+
+<!-- Founder -->
+<section class="about-card founder-card p-4 p-md-5 my-4">
+  <div class="row align-items-center g-4">
+    <div class="col-md-4 text-center">
+      <img src="{{ url_for('static', filename='images/founder.jpg') }}"
+     alt="Kabir Mohsin"
+     class="founder-photo"
+     onerror="this.outerHTML='<div class=&quot;founder-avatar&quot;>KM</div>'">
+      <h4 class="fw-bold text-white mt-3 mb-0">Kabir Mohsin</h4>
+      <span class="about-tag mt-2 d-inline-block">Founder</span>
+    </div>
+    <div class="col-md-8">
+      <h3 class="fw-bold text-white mb-3">Meet the Founder</h3>
+      <p class="about-muted">
+        Hi, I'm Kabir Mohsin, the founder of GymDesk. I built this store to make gym shopping simple and trustworthy for everyone who loves fitness. If you have a question, feedback or an idea, I'd love to hear from you.
+      </p>
+
+      <div class="contact-list mt-4">
+        <a href="mailto:kabirmohsin892@gmail.com" class="contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>kabirmohsin892@gmail.com</span>
+        </a>
+        <a href="tel:+917017051229" class="contact-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>+91 70170 51229</span>
+        </a>
+        <a href="https://wa.me/917017051229" target="_blank" rel="noopener" class="contact-item">
+          <i class="bi bi-whatsapp"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Team -->
+<section class="my-5">
+  <div class="text-center mb-4">
+    <span class="about-tag"><i class="bi bi-people-fill"></i> Our Team</span>
+    <h3 class="fw-bold text-white mt-3">Meet the <span class="text-orange">Team</span></h3>
+    <p class="about-muted mx-auto" style="max-width: 560px;">
+      The people working behind the scenes to bring you the best gym gear.
+    </p>
+  </div>
+
+  <div class="row g-3 g-md-4">
+
+    <!-- Member 1 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="about-card team-card p-4 h-100 text-center">
+        <img src="{{ url_for('static', filename='images/team/member1.jpeg') }}"
+             alt="Ayush Agarwal"
+             class="team-photo"
+             onerror="this.outerHTML='<div class=&quot;team-avatar&quot;>M1</div>'">
+        <h5 class="fw-bold text-white mt-3 mb-2">Ayush Agarwal</h5>
+        <span class="team-domain">Web Developer</span>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="about-card team-card p-4 h-100 text-center">
+        <img src="{{ url_for('static', filename='images/team/member2.jpeg') }}"
+             alt="Abhay Patel"
+             class="team-photo"
+             onerror="this.outerHTML='<div class=&quot;team-avatar&quot;>M2</div>'">
+        <h5 class="fw-bold text-white mt-3 mb-2">Abhay Patel</h5>
+        <span class="team-domain">UI/UX Designer</span>
+      </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="about-card team-card p-4 h-100 text-center">
+        <img src="{{ url_for('static', filename='images/team/member3.jpeg') }}"
+             alt="Aditya Chauhan"
+             class="team-photo"
+             onerror="this.outerHTML='<div class=&quot;team-avatar&quot;>M3</div>'">
+        <h5 class="fw-bold text-white mt-3 mb-2">Aditya Chauhan</h5>
+        <span class="team-domain">Data Analytics</span>
+      </div>
+    </div>
+
+    <!-- Member 4 -->
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="about-card team-card p-4 h-100 text-center">
+        <img src="{{ url_for('static', filename='images/team/member4.jpeg') }}"
+             alt="Aastik Mishra"
+             class="team-photo"
+             onerror="this.outerHTML='<div class=&quot;team-avatar&quot;>M4</div>'">
+        <h5 class="fw-bold text-white mt-3 mb-2">Aastik Mishra</h5>
+        <span class="team-domain">Ai Developer</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="text-center my-5">
+  <h4 class="fw-bold text-white mb-3">Ready to fuel your grind?</h4>
+  <a href="{{ url_for('index') }}" class="btn btn-checkout px-4"><i class="bi bi-bag"></i> Start Shopping</a>
+</section>
+
+{% endblock %}
